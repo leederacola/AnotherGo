@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AnotherGo.Models;
+
+namespace AnotherGo.Abstract
+{
+    public interface IGameRepository
+    {
+        Task<IEnumerable<Game>> GetAllGames();
+        Task<Game> GetGame(int? id);
+        Game AddGame(Game game);
+        Task<Game> EditGame(Game game);
+        Task<int> DeleteGame(int id);
+        bool GameExist(int id);
+
+        Task<IEnumerable<Game>> GetPlayerGames(int playerId);
+    }
+}
