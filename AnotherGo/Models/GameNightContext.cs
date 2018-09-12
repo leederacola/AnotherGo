@@ -16,11 +16,14 @@ namespace AnotherGo.Models
             : base(options)
         {
         }
-        public virtual DbSet<EventGames> EventGames { get; set; }
-        public virtual DbSet<EventPlayers> EventPlayers { get; set; }
-        public virtual DbSet<Game> Game { get; set; }
-        public virtual DbSet<GameNight> GameNight { get; set; }
-        public virtual DbSet<Library> Library { get; set; }
-        public virtual DbSet<Player> Player { get; set; }
+
+        public DbSet<Game> Game { get; set; }
+        public DbSet<Library> Library { get; set; }
+        public DbSet<Player> Player { get; set; }
+        public DbSet<GameNight> GameNight { get; set; }
+        public DbSet<EventGames> EventGames { get; set; }
+        public DbSet<EventPlayers> EventPlayers { get; set; }
+
+
     }
 }

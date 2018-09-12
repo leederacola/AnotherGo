@@ -10,6 +10,6 @@ namespace AnotherGo.Models
         public int PlayerId { get; set; }
         public string PlayerName { get; set; }
 
-        public ICollection<Game> Games { get; set; }
+        //public ICollection<Game> Games { get; set; }
     }
 }

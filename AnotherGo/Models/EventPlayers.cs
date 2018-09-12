@@ -11,7 +11,5 @@ namespace AnotherGo.Models
         public int GameNightId { get; set; }
         public int PlayerId { get; set; }
 
-        public GameNight GameNight { get; set; }
-        public Player Player { get; set; }
     }
 }

@@ -1,0 +1,57 @@
+﻿@model AnotherGo.Models.Game
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GameDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GameDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinPlayer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinPlayer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxPlayer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaxPlayer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgPath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImgPath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ThumbPath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ThumbPath)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="GameId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
