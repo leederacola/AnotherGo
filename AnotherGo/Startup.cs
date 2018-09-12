@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AnotherGo.Abstract;
+using AnotherGo.Concrete;
 using AnotherGo.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +29,23 @@ namespace AnotherGo
 
             services.AddDbContext<GameNightContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("GameDatabase")));
+
+
+            services.AddScoped<IGameRepository, GameRepository>();
+            services.AddScoped<ILibraryRepository, LibraryRepository>();
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
+
+
+            services.AddCors(options =>
+            {
+                // allow local host
+                options.AddPolicy("LocalTest",
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200").AllowAnyHeader();
+                });
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
