@@ -34,6 +34,7 @@ namespace AnotherGo
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<ILibraryRepository, LibraryRepository>();
             services.AddScoped<IPlayerRepository, PlayerRepository>();
+            services.AddScoped<IEventRepository, Eventrepository>();
 
 
             services.AddCors(options =>
